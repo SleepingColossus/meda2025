@@ -162,6 +162,57 @@
         "name": "sd\\sd.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "file": "sd/music.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "sd\\music.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "hd/music.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "hd\\music.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sd/boombox.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sd\\boombox.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Bubble.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Bubble.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/PixiJS/12254a94cf3e8dbc4bcccadf4f2f761ee0736f0abe7405c4a419fab822ba90ca_Bubble.png",
+          "name": "Bubble.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "sd/note.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sd\\note.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -212,6 +263,51 @@
         "characterSize": 96,
         "color": "255;0;0"
       }
+    },
+    {
+      "additive": false,
+      "assetStoreId": "85f99439726e532b49dcf86abd78d504bfc2b11aed5be239fd2bcc3e1e31c668",
+      "destroyWhenNoParticles": false,
+      "emitterAngleA": 0,
+      "emitterAngleB": 45,
+      "emitterForceMax": 100,
+      "emitterForceMin": 50,
+      "flow": 50,
+      "jumpForwardInTimeOnCreation": 0,
+      "maxParticleNb": 5,
+      "name": "notes",
+      "particleAlpha1": 255,
+      "particleAlpha2": 35,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 50,
+      "particleAngle2": 50,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 255,
+      "particleBlue2": 255,
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 255,
+      "particleGreen2": 255,
+      "particleLifeTimeMax": 4,
+      "particleLifeTimeMin": 1,
+      "particleRed1": 255,
+      "particleRed2": 255,
+      "particleSize1": 10,
+      "particleSize2": 75,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 1,
+      "rendererParam2": 1,
+      "rendererType": "Quad",
+      "tank": -1,
+      "textureParticleName": "sd\\note.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 0,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "objectsFolderStructure": {
@@ -219,6 +315,9 @@
     "children": [
       {
         "objectName": "countdown"
+      },
+      {
+        "objectName": "notes"
       }
     ]
   },
@@ -245,11 +344,18 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 1.7911979166666625,
+        "zoomFactor": 1.125902463136084,
         "windowMask": false
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "tweenUp",
+          "type": "boolean",
+          "value": true
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -277,6 +383,36 @@
           "x": 778,
           "y": 712,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "boombox",
+          "persistentUuid": "3fa6211f-a4c6-4d53-b190-852474d5c2fb",
+          "width": 0,
+          "x": 389,
+          "y": 770,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 270,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "notes",
+          "persistentUuid": "55ffcdd6-e8f9-4c96-9190-73bd87584418",
+          "width": 0,
+          "x": 632,
+          "y": 887,
+          "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -342,6 +478,71 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "boombox",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "sd\\boombox.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 43,
+                            "y": 34
+                          },
+                          {
+                            "x": 451,
+                            "y": 34
+                          },
+                          {
+                            "x": 451,
+                            "y": 300
+                          },
+                          {
+                            "x": 43,
+                            "y": 300
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -349,6 +550,9 @@
         "children": [
           {
             "objectName": "background"
+          },
+          {
+            "objectName": "boombox"
           }
         ]
       },
@@ -359,6 +563,159 @@
             "includeConfig": 0
           },
           "target": "date events"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "sd\\music.mp3",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleYTween2"
+              },
+              "parameters": [
+                "boombox",
+                "Tween",
+                "\"y\"",
+                "1.5",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleXTween2"
+              },
+              "parameters": [
+                "boombox",
+                "Tween",
+                "\"x\"",
+                "1.3",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "False"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleYTween2"
+              },
+              "parameters": [
+                "boombox",
+                "Tween",
+                "\"y\"",
+                "1",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleXTween2"
+              },
+              "parameters": [
+                "boombox",
+                "Tween",
+                "\"x\"",
+                "0.8",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "True"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -431,6 +788,18 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "ShakeObject_PositionAngle",
+          "type": "ShakeObject::ShakeObject_PositionAngle"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     },
@@ -665,6 +1034,21 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 274,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "notes",
+          "persistentUuid": "a0002224-8d2e-4687-8686-6c9463edae5f",
+          "width": 0,
+          "x": 1481,
+          "y": 815,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -856,7 +1240,12 @@
           "updateIfNotVisible": false,
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
           "animations": [
             {
               "name": "",
@@ -1248,6 +1637,159 @@
             "includeConfig": 0
           },
           "target": "date events"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "hd\\music.mp3",
+                "",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "True"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleYTween2"
+              },
+              "parameters": [
+                "clock",
+                "Tween",
+                "\"y\"",
+                "0.4",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleXTween2"
+              },
+              "parameters": [
+                "clock",
+                "Tween",
+                "\"x\"",
+                "0.4",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "False"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleYTween2"
+              },
+              "parameters": [
+                "clock",
+                "Tween",
+                "\"y\"",
+                "0.3",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleXTween2"
+              },
+              "parameters": [
+                "clock",
+                "Tween",
+                "\"x\"",
+                "0.3",
+                "\"bounce\"",
+                "0.5",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "tweenUp",
+                "True"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -1328,6 +1870,10 @@
         {
           "name": "Text",
           "type": "TextContainerCapability::TextContainerBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     }
